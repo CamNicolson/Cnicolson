@@ -14,7 +14,7 @@ const projects = [
     description:
       'A task management app with dashboard stats, notes, time tracking, filters, and persistent storage.',
     status: 'In progress',
-    href: 'https://jezisgay.xyz',
+    href: '#',
     cta: 'View project',
   },
 ]
