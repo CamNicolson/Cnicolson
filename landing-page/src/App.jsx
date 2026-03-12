@@ -27,7 +27,7 @@ function App() {
           <div className="hero-top">
             <div className="hero-copy">
               <p className="domain-pill">cnicolson.xyz</p>
-              <h1>Cam's Coding Shit.</h1>
+              <h1>Cam's Projects.</h1>
             </div>
 
             <div className="hero-links">
