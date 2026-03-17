@@ -114,7 +114,6 @@ const projects = [
     marks: [
       { symbol: '£', label: 'Budget planning' },
       { symbol: '↗', label: 'Goal mapping' },
-      { symbol: '◎', label: 'Expense tracking' },
     ],
     accent: 'finance',
   },
@@ -125,7 +124,6 @@ const projects = [
     status: 'Live',
     href: 'https://jezisgay.xyz',
     marks: [
-      { symbol: '▦', label: 'Task scheduling' },
       { symbol: '⏱', label: 'Fast setup' },
       { symbol: '⌘', label: 'Simple flow' },
     ],
