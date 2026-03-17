@@ -20,6 +20,17 @@ const Icon = ({ name, title }) => {
     )
   }
 
+  if (name === 'linkedin') {
+    return (
+      <svg {...props}>
+        <path
+          d="M5.5 8.5A1.5 1.5 0 1 0 5.5 5.5a1.5 1.5 0 0 0 0 3ZM4.25 9.75h2.5v8.75h-2.5V9.75ZM9.25 9.75h2.4v1.2h.03c.33-.63 1.14-1.46 2.74-1.46 2.93 0 3.48 1.93 3.48 4.43v4.58h-2.5v-4.06c0-.97-.02-2.22-1.35-2.22-1.35 0-1.56 1.06-1.56 2.15v4.13h-2.5V9.75Z"
+          fill="currentColor"
+        />
+      </svg>
+    )
+  }
+
   if (name === 'link') {
     return (
       <svg {...props}>
@@ -73,28 +84,28 @@ const Icon = ({ name, title }) => {
 
 const projects = [
   {
-    name: 'CN Budget',
+    name: 'Personal Finance Tool',
     icon: 'finance',
     domain: 'cnbudget.xyz',
     status: 'Live',
     href: 'https://cnbudget.xyz',
     marks: [
-      { symbol: '£', label: 'Money' },
-      { symbol: '↗', label: 'Planning' },
-      { symbol: '◎', label: 'Tracking' },
+      { symbol: '£', label: 'Budget planning' },
+      { symbol: '↗', label: 'Goal mapping' },
+      { symbol: '◎', label: 'Expense tracking' },
     ],
     accent: 'finance',
   },
   {
-    name: 'Timetable One',
+    name: 'Project Manager',
     icon: 'calendar',
     domain: 'jezisgay.xyz',
     status: 'Live',
     href: 'https://jezisgay.xyz',
     marks: [
-      { symbol: '▦', label: 'Schedule' },
-      { symbol: '⏱', label: 'Fast' },
-      { symbol: '⌘', label: 'Simple' },
+      { symbol: '▦', label: 'Task scheduling' },
+      { symbol: '⏱', label: 'Fast setup' },
+      { symbol: '⌘', label: 'Simple flow' },
     ],
     accent: 'timetable',
   },
@@ -125,9 +136,18 @@ function App() {
                 <Icon name="github" title="GitHub" />
                 GitHub
               </a>
+              <a
+                className="secondary-action"
+                href="https://www.linkedin.com/in/camnicolson/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Icon name="linkedin" title="LinkedIn" />
+                LinkedIn
+              </a>
               <a className="secondary-action" href="mailto:scenicolson@gmail.com">
                 <Icon name="mail" title="Email" />
-                Email
+                Email Me
               </a>
             </div>
           </div>
@@ -186,10 +206,13 @@ function App() {
                 <div className="project-domain">{project.domain}</div>
 
                 <div className="project-meta">
-                  <div className="mark-row" aria-label="Project marks">
+                  <div className="mark-row" aria-label="Project highlights">
                     {project.marks.map((mark) => (
                       <span className="mark-tile" key={mark.label} title={mark.label} aria-label={mark.label}>
-                        {mark.symbol}
+                        <span className="mark-symbol" aria-hidden="true">
+                          {mark.symbol}
+                        </span>
+                        <span className="mark-label">{mark.label}</span>
                       </span>
                     ))}
                   </div>
