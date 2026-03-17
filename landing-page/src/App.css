@@ -87,15 +87,17 @@ a {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) auto;
-  align-items: stretch;
-  gap: 22px;
+  position: relative;
+  display: block;
   padding: 30px;
   border-radius: 30px;
   box-shadow: 0 26px 72px rgba(0, 0, 0, 0.6);
 }
 
+.hero-copy {
+  max-width: min(100%, 620px);
+  padding-right: 220px;
+}
 
 .eyebrow {
   display: inline-flex;
@@ -165,29 +167,33 @@ a {
 }
 
 .hero-panel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   display: flex;
-  min-width: 290px;
+  width: 176px;
+  min-width: 0;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
-  padding: 18px 20px;
-  border-radius: 24px;
+  gap: 10px;
+  padding: 14px 15px;
+  border-radius: 20px;
   background:
-    radial-gradient(circle at top right, rgba(108, 125, 255, 0.11), transparent 40%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.025));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    radial-gradient(circle at top right, rgba(108, 125, 255, 0.1), transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .panel-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
 }
 
 .panel-label {
-  font-size: 0.76rem;
-  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
   color: rgba(231, 238, 252, 0.55);
   text-transform: uppercase;
 }
@@ -195,20 +201,20 @@ a {
 .panel-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 11px;
+  gap: 6px;
+  padding: 5px 8px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.035);
-  color: rgba(231, 238, 252, 0.7);
-  font-size: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(231, 238, 252, 0.66);
+  font-size: 0.66rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .panel-pill-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 999px;
   background: #7dffb1;
   box-shadow: 0 0 14px rgba(125, 255, 177, 0.8);
@@ -216,13 +222,14 @@ a {
 
 .panel-stat {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
 }
 
 .panel-count {
-  font-size: clamp(3.2rem, 7vw, 4.8rem);
-  line-height: 0.86;
+  font-size: clamp(2.8rem, 6vw, 3.8rem);
+  line-height: 0.84;
   font-weight: 900;
   letter-spacing: -0.06em;
   color: rgba(255, 255, 255, 0.99);
@@ -231,19 +238,19 @@ a {
 .panel-copy {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .panel-title {
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.98rem;
   font-weight: 780;
   letter-spacing: -0.02em;
 }
 
 .panel-caption {
-  color: rgba(231, 238, 252, 0.56);
-  font-size: 0.9rem;
+  color: rgba(231, 238, 252, 0.54);
+  font-size: 0.8rem;
   letter-spacing: 0.01em;
 }
 
@@ -413,16 +420,13 @@ a {
 }
 
 @media (max-width: 920px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-panel {
-    min-width: 0;
+  .hero-copy {
+    max-width: none;
+    padding-right: 190px;
   }
 
   .panel-count {
-    font-size: clamp(3rem, 12vw, 4.4rem);
+    font-size: clamp(2.8rem, 10vw, 3.8rem);
   }
 
   .project-grid {
@@ -439,15 +443,20 @@ a {
     padding: 22px;
   }
 
-  .hero-panel,
-  .panel-top,
-  .panel-stat {
-    align-items: flex-start;
+  .hero-copy {
+    padding-right: 0;
+    padding-top: 124px;
   }
 
-  .panel-top,
-  .panel-stat {
-    flex-direction: column;
+  .hero-panel {
+    top: 16px;
+    right: 16px;
+    width: 150px;
+    padding: 12px 13px;
+  }
+
+  .panel-top {
+    align-items: center;
   }
 
   .project-meta {
