@@ -171,35 +171,10 @@ function App() {
               </a>
             </div>
           </div>
-
-          <aside className="hero-panel">
-            <div className="panel-top">
-              <span className="panel-label">Live</span>
-              <span className="panel-count">0{projects.length}</span>
-            </div>
-
-            <div className="project-strips" aria-label="Live sites">
-              {projects.map((project) => (
-                <a
-                  key={project.name}
-                  className={`project-strip ${project.accent}`}
-                  href={project.href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span className="strip-icon" aria-hidden="true">
-                    <Icon name={project.icon} title={project.name} />
-                  </span>
-                  <span className="strip-copy">
-                    <strong>{project.name}</strong>
-                    <small>{project.domain}</small>
-                  </span>
-                  <span className="strip-arrow" aria-hidden="true">
-                    ↗
-                  </span>
-                </a>
-              ))}
-            </div>
+          <aside className="hero-panel" aria-label="Live projects summary">
+            <span className="panel-label">Live</span>
+            <span className="panel-count">0{projects.length}</span>
+            <span className="panel-caption">Projects live now</span>
           </aside>
         </header>
 
