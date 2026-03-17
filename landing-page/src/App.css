@@ -24,33 +24,50 @@ a {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.06), transparent 36%),
-    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.05), transparent 40%),
-    linear-gradient(180deg, #000000 0%, #05050a 55%, #000000 100%);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), transparent 28%),
+    radial-gradient(circle at 84% 8%, rgba(255, 255, 255, 0.04), transparent 28%),
+    linear-gradient(180deg, #010101 0%, #040408 48%, #000000 100%);
 }
 
 .background-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
+  filter: blur(110px);
   opacity: 0.5;
   pointer-events: none;
 }
 
 .orb-one {
-  width: 340px;
-  height: 340px;
-  top: -120px;
+  width: 360px;
+  height: 360px;
+  top: -140px;
   left: -120px;
-  background: rgba(59, 130, 246, 0.18);
+  background: rgba(65, 105, 225, 0.18);
 }
 
 .orb-two {
-  width: 380px;
-  height: 380px;
-  right: -160px;
-  top: 90px;
-  background: rgba(168, 85, 247, 0.14);
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  top: 80px;
+  background: rgba(140, 82, 255, 0.15);
+}
+
+.orb-three {
+  width: 340px;
+  height: 340px;
+  left: 14%;
+  bottom: 50px;
+  background: rgba(0, 200, 140, 0.12);
+}
+
+.orb-four {
+  width: 300px;
+  height: 300px;
+  right: 10%;
+  bottom: -40px;
+  background: rgba(255, 118, 67, 0.1);
 }
 
 .container {
@@ -64,18 +81,18 @@ a {
 .hero,
 .project-card,
 .hero-panel {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.035);
-  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(18px);
 }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.8fr);
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.86fr);
   gap: 22px;
   padding: 30px;
-  border-radius: 28px;
-  box-shadow: 0 26px 72px rgba(0, 0, 0, 0.55);
+  border-radius: 30px;
+  box-shadow: 0 26px 72px rgba(0, 0, 0, 0.6);
 }
 
 .eyebrow {
@@ -94,13 +111,13 @@ a {
   margin: 0;
   font-size: clamp(2.6rem, 6vw, 4.6rem);
   line-height: 0.98;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.055em;
   color: #ffffff;
 }
 
 .subhead {
   margin: 14px 0 0;
-  color: rgba(231, 238, 252, 0.74);
+  color: rgba(231, 238, 252, 0.72);
   font-size: 1.05rem;
   letter-spacing: 0.01em;
 }
@@ -115,7 +132,7 @@ a {
 .primary-action,
 .secondary-action,
 .project-button,
-.mini-links a {
+.project-strip {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -125,7 +142,7 @@ a {
 .primary-action:hover,
 .secondary-action:hover,
 .project-button:hover,
-.mini-links a:hover {
+.project-strip:hover {
   transform: translateY(-2px);
 }
 
@@ -148,7 +165,7 @@ a {
 }
 
 .hero-panel {
-  border-radius: 24px;
+  border-radius: 26px;
   padding: 20px;
 }
 
@@ -172,31 +189,73 @@ a {
   color: rgba(255, 255, 255, 0.95);
 }
 
-.mini-links {
+.project-strips {
   display: grid;
   gap: 12px;
   margin-top: 16px;
 }
 
-.mini-links a {
-  padding: 12px 14px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.project-strip {
+  position: relative;
+  padding: 13px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.02);
-  color: rgba(231, 238, 252, 0.86);
-  font-weight: 650;
+  overflow: hidden;
 }
 
-.mini-symbol {
-  display: inline-flex;
-  width: 18px;
-  height: 18px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  font-size: 0.78rem;
-  line-height: 1;
+.project-strip::before {
+  content: '';
+  position: absolute;
+  inset: auto -30px -30px auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  filter: blur(24px);
+  opacity: 0.28;
+}
+
+.project-strip.finance::before {
+  background: rgba(0, 224, 138, 0.18);
+}
+
+.project-strip.timetable::before {
+  background: rgba(87, 126, 255, 0.2);
+}
+
+.strip-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.92);
+  flex-shrink: 0;
+}
+
+.strip-copy {
+  display: grid;
+  min-width: 0;
+}
+
+.strip-copy strong {
+  font-size: 1rem;
+  font-weight: 750;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.strip-copy small {
+  margin-top: 2px;
+  color: rgba(231, 238, 252, 0.58);
+  letter-spacing: 0.04em;
+}
+
+.strip-arrow {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.1rem;
 }
 
 .section {
@@ -226,28 +285,29 @@ a {
 .project-card {
   position: relative;
   overflow: hidden;
-  border-radius: 26px;
+  border-radius: 28px;
   padding: 22px;
+  min-height: 300px;
 }
 
 .card-glow {
   position: absolute;
-  width: 190px;
-  height: 190px;
-  top: -90px;
-  right: -80px;
+  width: 220px;
+  height: 220px;
+  top: -100px;
+  right: -86px;
   border-radius: 50%;
-  filter: blur(28px);
-  opacity: 0.55;
+  filter: blur(34px);
+  opacity: 0.56;
   pointer-events: none;
 }
 
 .project-card.finance .card-glow {
-  background: rgba(34, 197, 94, 0.24);
+  background: rgba(0, 214, 126, 0.22);
 }
 
 .project-card.timetable .card-glow {
-  background: rgba(59, 130, 246, 0.24);
+  background: rgba(70, 120, 255, 0.22);
 }
 
 .project-top {
@@ -257,13 +317,13 @@ a {
 }
 
 .project-icon {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   display: grid;
   place-items: center;
-  border-radius: 16px;
+  border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.34);
   color: rgba(255, 255, 255, 0.92);
 }
 
@@ -281,50 +341,66 @@ a {
 }
 
 .project-title {
-  margin: 16px 0 0;
-  font-size: 1.9rem;
-  letter-spacing: -0.03em;
-  color: rgba(255, 255, 255, 0.96);
+  margin: 20px 0 0;
+  font-size: clamp(1.75rem, 3vw, 2rem);
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.97);
 }
 
 .project-domain {
-  margin-top: 6px;
-  color: rgba(231, 238, 252, 0.56);
+  margin-top: 8px;
+  color: rgba(231, 238, 252, 0.58);
   letter-spacing: 0.05em;
-  font-size: 0.95rem;
+  font-size: 0.96rem;
 }
 
-.tag-row {
+.project-meta {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.mark-row {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 18px;
 }
 
-.tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 10px;
-  border-radius: 999px;
+.mark-tile {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.02);
-  color: rgba(231, 238, 252, 0.8);
-  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.1rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .project-button {
-  width: fit-content;
-  margin-top: 18px;
-  padding: 12px 14px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.07);
-  color: rgba(255, 255, 255, 0.92);
-  font-weight: 850;
+  width: 84px;
+  height: 84px;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(232, 234, 240, 0.92));
+  color: #0a0a0d;
+  font-weight: 900;
+  box-shadow: 0 18px 38px rgba(255, 255, 255, 0.08);
+}
+
+.project-button span {
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
 }
 
 .project-button:hover {
-  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 44px rgba(255, 255, 255, 0.14);
 }
 
 .footer {
@@ -352,5 +428,17 @@ a {
 
   .hero {
     padding: 22px;
+  }
+
+  .project-meta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .project-button {
+    width: 100%;
+    height: 58px;
+    flex-direction: row;
+    border-radius: 18px;
   }
 }

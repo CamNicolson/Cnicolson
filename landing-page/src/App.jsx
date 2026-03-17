@@ -61,7 +61,6 @@ const Icon = ({ name, title }) => {
     )
   }
 
-  // finance
   return (
     <svg {...props}>
       <path
@@ -79,7 +78,11 @@ const projects = [
     domain: 'cnbudget.xyz',
     status: 'Live',
     href: 'https://cnbudget.xyz',
-    tags: ['💸 Budget', '📈 Plan', '🧾 Track'],
+    marks: [
+      { symbol: '£', label: 'Money' },
+      { symbol: '↗', label: 'Planning' },
+      { symbol: '◎', label: 'Tracking' },
+    ],
     accent: 'finance',
   },
   {
@@ -88,7 +91,11 @@ const projects = [
     domain: 'jezisgay.xyz',
     status: 'Live',
     href: 'https://jezisgay.xyz',
-    tags: ['📅 Schedule', '⏱️ Fast', '🧩 Simple'],
+    marks: [
+      { symbol: '▦', label: 'Schedule' },
+      { symbol: '⏱', label: 'Fast' },
+      { symbol: '⌘', label: 'Simple' },
+    ],
     accent: 'timetable',
   },
 ]
@@ -98,6 +105,8 @@ function App() {
     <div className="site-shell">
       <div className="background-orb orb-one" />
       <div className="background-orb orb-two" />
+      <div className="background-orb orb-three" />
+      <div className="background-orb orb-four" />
 
       <main className="container">
         <header className="hero">
@@ -125,23 +134,31 @@ function App() {
 
           <aside className="hero-panel">
             <div className="panel-top">
-              <span className="panel-label">Featured</span>
-              <span className="panel-count">{projects.length}</span>
+              <span className="panel-label">Live</span>
+              <span className="panel-count">0{projects.length}</span>
             </div>
 
-            <div className="mini-links">
-              <a href="https://www.linkedin.com/in/camnicolson/" target="_blank" rel="noreferrer">
-                <span className="mini-symbol">in</span>
-                LinkedIn
-              </a>
-              <a href="https://github.com/CamNicolson" target="_blank" rel="noreferrer">
-                <Icon name="github" title="GitHub" />
-                GitHub
-              </a>
-              <a href="mailto:scenicolson@gmail.com">
-                <Icon name="mail" title="Email" />
-                Email
-              </a>
+            <div className="project-strips" aria-label="Live sites">
+              {projects.map((project) => (
+                <a
+                  key={project.name}
+                  className={`project-strip ${project.accent}`}
+                  href={project.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="strip-icon" aria-hidden="true">
+                    <Icon name={project.icon} title={project.name} />
+                  </span>
+                  <span className="strip-copy">
+                    <strong>{project.name}</strong>
+                    <small>{project.domain}</small>
+                  </span>
+                  <span className="strip-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              ))}
             </div>
           </aside>
         </header>
@@ -168,18 +185,20 @@ function App() {
                 <h3 className="project-title">{project.name}</h3>
                 <div className="project-domain">{project.domain}</div>
 
-                <div className="tag-row" aria-label="Project highlights">
-                  {project.tags.map((tag) => (
-                    <span className="tag" key={tag}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <div className="project-meta">
+                  <div className="mark-row" aria-label="Project marks">
+                    {project.marks.map((mark) => (
+                      <span className="mark-tile" key={mark.label} title={mark.label} aria-label={mark.label}>
+                        {mark.symbol}
+                      </span>
+                    ))}
+                  </div>
 
-                <a className="project-button" href={project.href} target="_blank" rel="noreferrer">
-                  <Icon name="link" title="Open" />
-                  Open
-                </a>
+                  <a className="project-button" href={project.href} target="_blank" rel="noreferrer">
+                    <Icon name="link" title="Open" />
+                    <span>Open</span>
+                  </a>
+                </div>
               </article>
             ))}
           </div>
