@@ -61,6 +61,34 @@ const Icon = ({ name, title }) => {
     )
   }
 
+
+  if (name === 'stocks') {
+    return (
+      <svg {...props}>
+        <path
+          d="M4 18.5h16"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+        <path
+          d="M6 15.5 10 11.5 13 13.5 18 7.5"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M15.5 7.5H18v2.5"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    )
+  }
+
   if (name === 'calendar') {
     return (
       <svg {...props}>
@@ -85,7 +113,7 @@ const Icon = ({ name, title }) => {
 const projects = [
   {
     name: 'Personal Finance Tool',
-    icon: 'finance',
+    icon: 'stocks',
     domain: 'cnbudget.xyz',
     status: 'Live',
     href: 'https://cnbudget.xyz',
