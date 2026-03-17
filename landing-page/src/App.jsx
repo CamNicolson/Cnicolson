@@ -172,9 +172,21 @@ function App() {
             </div>
           </div>
           <aside className="hero-panel" aria-label="Live projects summary">
-            <span className="panel-label">Live</span>
-            <span className="panel-count">0{projects.length}</span>
-            <span className="panel-caption">Projects live now</span>
+            <div className="panel-top">
+              <span className="panel-label">Live</span>
+              <span className="panel-pill">
+                <span className="panel-pill-dot" aria-hidden="true" />
+                Active now
+              </span>
+            </div>
+
+            <div className="panel-stat">
+              <span className="panel-count">0{projects.length}</span>
+              <div className="panel-copy">
+                <span className="panel-title">Live projects</span>
+                <span className="panel-caption">Shipping and ready to open</span>
+              </div>
+            </div>
           </aside>
         </header>
 
