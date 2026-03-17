@@ -1,24 +1,94 @@
+const Icon = ({ name, title }) => {
+  const props = {
+    role: 'img',
+    'aria-label': title,
+    width: 18,
+    height: 18,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+  }
+
+  if (name === 'github') {
+    return (
+      <svg {...props}>
+        <path
+          d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.38-3.37-1.38-.45-1.18-1.1-1.49-1.1-1.49-.9-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.67.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.38-2.03 1.02-2.75-.1-.26-.44-1.3.1-2.7 0 0 .84-.27 2.75 1.05A9.2 9.2 0 0 1 12 7.1c.83 0 1.67.12 2.45.34 1.9-1.32 2.74-1.05 2.74-1.05.55 1.4.21 2.44.1 2.7.64.72 1.02 1.63 1.02 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.95.68 1.92 0 1.38-.01 2.5-.01 2.84 0 .26.18.58.69.48A10.2 10.2 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"
+          fill="currentColor"
+        />
+      </svg>
+    )
+  }
+
+  if (name === 'link') {
+    return (
+      <svg {...props}>
+        <path
+          d="M10.59 13.41a1 1 0 0 1 0-1.41l3.18-3.18a1 1 0 1 1 1.41 1.41l-3.18 3.18a1 1 0 0 1-1.41 0Z"
+          fill="currentColor"
+        />
+        <path
+          d="M7.05 16.95a4.5 4.5 0 0 1 0-6.36l2.12-2.12a1 1 0 1 1 1.41 1.41l-2.12 2.12a2.5 2.5 0 0 0 3.54 3.54l2.12-2.12a1 1 0 1 1 1.41 1.41l-2.12 2.12a4.5 4.5 0 0 1-6.36 0Z"
+          fill="currentColor"
+        />
+        <path
+          d="M16.95 7.05a4.5 4.5 0 0 1 0 6.36l-2.12 2.12a1 1 0 1 1-1.41-1.41l2.12-2.12a2.5 2.5 0 0 0-3.54-3.54l-2.12 2.12a1 1 0 1 1-1.41-1.41l2.12-2.12a4.5 4.5 0 0 1 6.36 0Z"
+          fill="currentColor"
+        />
+      </svg>
+    )
+  }
+
+  if (name === 'mail') {
+    return (
+      <svg {...props}>
+        <path
+          d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.68-.5 4.98 4.32c.2.17.48.17.68 0L17.32 6H6.68Zm11.32 2.24-4.34 3.76a2.5 2.5 0 0 1-3.32 0L6 8.24V17.5c0 .28.22.5.5.5h11c.28 0 .5-.22.5-.5V8.24Z"
+          fill="currentColor"
+        />
+      </svg>
+    )
+  }
+
+  if (name === 'calendar') {
+    return (
+      <svg {...props}>
+        <path
+          d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1Zm13 8H4v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9ZM5 6a1 1 0 0 0-1 1v1h16V7a1 1 0 0 0-1-1H5Z"
+          fill="currentColor"
+        />
+      </svg>
+    )
+  }
+
+  // finance
+  return (
+    <svg {...props}>
+      <path
+        d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 5a1 1 0 1 0-2 0v.4c-1.47.26-2.5 1.3-2.5 2.74 0 1.9 1.6 2.55 3.12 3.02 1.44.44 1.88.7 1.88 1.32 0 .72-.74 1.18-1.9 1.18-1.1 0-1.87-.36-2.4-.76a1 1 0 1 0-1.2 1.6c.65.49 1.6.9 2.99 1.02V19a1 1 0 1 0 2 0v-.48c1.67-.28 2.9-1.36 2.9-3.02 0-1.98-1.63-2.62-3.18-3.1-1.45-.45-1.82-.7-1.82-1.24 0-.58.55-.95 1.5-.95.83 0 1.43.24 1.88.5a1 1 0 1 0 1.08-1.68c-.52-.33-1.27-.62-2.36-.76V7Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
 const projects = [
   {
     name: 'CN Budget',
-    tagline: 'Personal finance planner and budget dashboard',
-    description:
-      'A finance tool for tracking income, expenses, savings goals, and forward-looking plans in one clean dashboard.',
-    status: 'Live now',
-    href: 'https://cnbudget.xyz',
+    icon: 'finance',
     domain: 'cnbudget.xyz',
-    cta: 'Open finance app',
+    status: 'Live',
+    href: 'https://cnbudget.xyz',
+    tags: ['💸 Budget', '📈 Plan', '🧾 Track'],
     accent: 'finance',
   },
   {
     name: 'Timetable One',
-    tagline: 'Simple scheduling and timetable planning',
-    description:
-      'A streamlined timetable experience built for organizing classes, routines, and weekly planning without extra clutter.',
-    status: 'Live now',
-    href: 'https://jezisgay.xyz',
+    icon: 'calendar',
     domain: 'jezisgay.xyz',
-    cta: 'Open timetable app',
+    status: 'Live',
+    href: 'https://jezisgay.xyz',
+    tags: ['📅 Schedule', '⏱️ Fast', '🧩 Simple'],
     accent: 'timetable',
   },
 ]
@@ -28,17 +98,13 @@ function App() {
     <div className="site-shell">
       <div className="background-orb orb-one" />
       <div className="background-orb orb-two" />
-      <div className="background-grid" />
 
       <main className="container">
         <header className="hero">
           <div className="hero-copy">
             <p className="eyebrow">cnicolson.xyz</p>
-            <h1>Launchpad for Cam&apos;s live projects.</h1>
-            <p className="hero-description">
-              A clean home base for the apps I&apos;m building and shipping. Browse the featured
-              projects below and jump straight into each live site.
-            </p>
+            <h1>Cam&apos;s Projects</h1>
+            <p className="subhead">Two live builds. Tap in.</p>
 
             <div className="hero-actions">
               <a
@@ -47,36 +113,43 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
               >
-                View GitHub
+                <Icon name="github" title="GitHub" />
+                GitHub
               </a>
               <a className="secondary-action" href="mailto:scenicolson@gmail.com">
-                Contact me
+                <Icon name="mail" title="Email" />
+                Email
               </a>
             </div>
           </div>
 
           <aside className="hero-panel">
-            <div className="panel-label">Currently featured</div>
-            <div className="panel-stat">
-              <span>Live projects</span>
-              <strong>{projects.length}</strong>
+            <div className="panel-top">
+              <span className="panel-label">Featured</span>
+              <span className="panel-count">{projects.length}</span>
             </div>
+
             <div className="mini-links">
               <a href="https://www.linkedin.com/in/camnicolson/" target="_blank" rel="noreferrer">
+                <span className="mini-symbol">in</span>
                 LinkedIn
               </a>
               <a href="https://github.com/CamNicolson" target="_blank" rel="noreferrer">
+                <Icon name="github" title="GitHub" />
                 GitHub
               </a>
-              <a href="mailto:scenicolson@gmail.com">Email</a>
+              <a href="mailto:scenicolson@gmail.com">
+                <Icon name="mail" title="Email" />
+                Email
+              </a>
             </div>
           </aside>
         </header>
 
         <section className="section">
           <div className="section-heading">
-            <p>FEATURED WORK</p>
-            <h2>Current live projects</h2>
+            <p>LIVE</p>
+            <h2>Jump in</h2>
           </div>
 
           <div className="project-grid">
@@ -84,33 +157,35 @@ function App() {
               <article className={`project-card ${project.accent}`} key={project.name}>
                 <div className="card-glow" />
 
-                <div className="project-header">
-                  <div>
-                    <p className="project-tagline">{project.tagline}</p>
-                    <h3>{project.name}</h3>
+                <div className="project-top">
+                  <div className="project-icon" aria-hidden="true">
+                    <Icon name={project.icon} title={project.name} />
                   </div>
+
                   <span className="status-badge">{project.status}</span>
                 </div>
 
-                <p className="project-description">{project.description}</p>
+                <h3 className="project-title">{project.name}</h3>
+                <div className="project-domain">{project.domain}</div>
 
-                <div className="project-footer">
-                  <div className="project-domain">{project.domain}</div>
-                  <a
-                    className="project-button"
-                    href={project.href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {project.cta}
-                  </a>
+                <div className="tag-row" aria-label="Project highlights">
+                  {project.tags.map((tag) => (
+                    <span className="tag" key={tag}>
+                      {tag}
+                    </span>
+                  ))}
                 </div>
+
+                <a className="project-button" href={project.href} target="_blank" rel="noreferrer">
+                  <Icon name="link" title="Open" />
+                  Open
+                </a>
               </article>
             ))}
           </div>
         </section>
 
-        <footer className="footer">Built as a simple, polished launch page for current work.</footer>
+        <footer className="footer">© {new Date().getFullYear()} cnicolson.xyz</footer>
       </main>
     </div>
   )
