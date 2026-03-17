@@ -64,24 +64,18 @@ const Icon = ({ name, title }) => {
 
   if (name === 'stocks') {
     return (
-      <svg {...props}>
+      <svg {...props} width={22} height={22}>
         <path
-          d="M4 18.5h16"
+          d="M5.5 15.5 10 11 13 13.2 18.2 8"
           stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M6 15.5 10 11.5 13 13.5 18 7.5"
-          stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth="2.4"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
-          d="M15.5 7.5H18v2.5"
+          d="M15.6 8H18.2v2.6"
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth="2.4"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
