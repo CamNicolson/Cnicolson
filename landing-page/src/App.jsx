@@ -184,7 +184,6 @@ function App() {
               <span className="panel-count">0{projects.length}</span>
               <div className="panel-copy">
                 <span className="panel-title">Live projects</span>
-                <span className="panel-caption">Shipping and ready to open</span>
               </div>
             </div>
           </aside>
