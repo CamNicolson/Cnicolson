@@ -727,11 +727,24 @@ function App() {
       }
 
       navigator.geolocation.getCurrentPosition(
-        ({ coords }) => {
+        async ({ coords }) => {
+          let resolvedLocation = 'Local area'
+
+          try {
+            const timezoneLocation = await loadTimezoneFallbackLocation(controller.signal)
+            resolvedLocation = timezoneLocation.location
+          } catch (error) {
+            if (error.name === 'AbortError') {
+              return
+            }
+
+            console.error('Timezone location lookup failed', error)
+          }
+
           loadWeather({
             latitude: coords.latitude,
             longitude: coords.longitude,
-            location: 'Local area',
+            location: resolvedLocation,
           })
         },
         () => {
