@@ -405,6 +405,18 @@ const projects = [
     ],
     accent: 'timetable',
   },
+  {
+    name: 'Photo Video Converters',
+    icon: 'github',
+    domain: 'github.com/CamNicolson/Photo-Video-Converters',
+    status: 'Source',
+    href: 'https://github.com/CamNicolson/Photo-Video-Converters',
+    marks: [
+      { symbol: 'HEIC → JPG'},
+      { symbol: 'MOV → MP4' },
+    ],
+    accent: 'finance',
+  },
 ]
 
 const formatWeather = (data) => {
